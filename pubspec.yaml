@@ -1,7 +1,6 @@
 name: squirrel
 description: Create installable desktop apps
 version: 0.2.0
-author: Ani Betts <anais@anaisbetts.org>, RustamG
 homepage: https://github.com/RustamG/squirrel-flutter
 
 environment:

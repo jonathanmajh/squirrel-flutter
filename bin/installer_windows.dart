@@ -10,7 +10,6 @@ import 'package:squirrel/parameters.dart';
 import 'package:squirrel/utils.dart';
 import 'package:yaml/yaml.dart';
 
-
 Future<int> main(List<String> args) async {
   await initPaths();
 
@@ -22,7 +21,7 @@ Future<int> main(List<String> args) async {
 
   final pubspec = Parameters.fromYamlAndArgs(yaml, args);
   final buildDirectory = canonicalizePubspecPath(
-      path.join('build', 'windows', 'runner', 'Release'))!;
+      path.join('build', 'windows', 'x64', 'runner', 'Release'))!;
 
   // Copy Squirrel.exe into the app dir and squish the setup icon in
   final tgtSquirrel = path.join(buildDirectory, 'squirrel.exe');
