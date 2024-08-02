@@ -48,16 +48,15 @@ Future<int> main(List<String> args) async {
       .map((f) => f.path.replaceFirst(buildDirectory, '').substring(1))
       .toList();
 
-  final nuspecContent = template
-      .render(
-          name: pubspec.packageName,
-          title: pubspec.appFriendlyName,
-          description: pubspec.appDescription,
-          version: pubspec.version,
-          authors: pubspec.authors,
-          iconUrl: pubspec.uninstallIconPngUrl,
-          additionalFiles: filePaths.map((f) => ({'src': f, 'target': f})))
-      .toString();
+  final nuspecContent = template.render({
+    'name': pubspec.packageName,
+    'title': pubspec.appFriendlyName,
+    'description': pubspec.appDescription,
+    'version': pubspec.version,
+    'authors': pubspec.authors,
+    'iconUrl': pubspec.uninstallIconPngUrl,
+    'additionalFiles': filePaths.map((f) => ({'src': f, 'target': f}))
+  }).toString();
 
   // NB: NuGet sucks
   final tmpDir = await Directory.systemTemp.createTemp('si-');
