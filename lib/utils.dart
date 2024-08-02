@@ -14,7 +14,7 @@ Future<void> initPaths() async {
 
   final squirrelPackage = packagesConfig.packages
       .firstWhere((package) => package.name == 'squirrel');
-  rootDir = path.join(path.fromUri(squirrelPackage.packageUriRoot), '..');
+  rootDir = path.canonicalize(path.join(path.fromUri(squirrelPackage.packageUriRoot), '..'));
   appDir = path.canonicalize(
       path.join(path.dirname(path.fromUri(Platform.packageConfig!)), '..'));
 }
