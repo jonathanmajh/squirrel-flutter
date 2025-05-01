@@ -1,11 +1,10 @@
 name: squirrel
 description: Create installable desktop apps
-version: 0.2.0
-homepage: https://github.com/RustamG/squirrel-flutter
+version: 0.2.1
+homepage: https://github.com/jonathanmajh/squirrel-flutter
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=2.0.1"
+  sdk: '>=3.0.0 <=4.0.0'
 
 dependencies:
   args: ^2.3.0
@@ -13,10 +12,10 @@ dependencies:
     sdk: flutter
   jinja: ^0.6.0
   package_config: ^2.0.2
-  path: ^1.8.0
+  path: ^1.9.0
   yaml: ^3.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  lints: ^4.0.0
+  flutter_lints: ^5.0.0
